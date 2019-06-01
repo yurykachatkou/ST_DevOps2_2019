@@ -16,7 +16,7 @@ Get-Content $ProcPath
 $sum1=0
 foreach($num1 in Get-Variable)
 {
-    if($num1.Value -is [int] -or $num1.Value -is [double] -or $num1.Value -is [float] -or $num1.Value -is [decimal] -and $num1.Name -ne "sum1")
+    if($num1.Value -is [int] -or $num1.Value -is [double] -or $num1.Value -is [float] -and $num1.Name -ne "sum1")
     {
     $sum1+=$num1.Value
     }
