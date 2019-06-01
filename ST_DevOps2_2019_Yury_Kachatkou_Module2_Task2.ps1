@@ -26,7 +26,8 @@ Write-Output $sum1
 #6.	Вывести список из 6 процессов занимающих дольше всего процессор.
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 6
 #7.	Вывести список названий и занятую виртуальную память (в Mb) каждого процесса, разделённые знаком тире, при этом если процесс занимает более 100Mb – выводить информацию красным цветом, иначе зелёным.
-Get-Process | ForEach-Object{
+Get-Process | ForEach-Object
+{
     if($_.VM/1MB -gt 100)
     {
     write-host $_.Name  " -- " ($_.VM/1MB)"MB" -ForegroundColor "Red"
