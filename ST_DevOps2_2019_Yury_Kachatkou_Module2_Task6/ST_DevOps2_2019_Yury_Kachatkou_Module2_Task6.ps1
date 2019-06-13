@@ -58,7 +58,7 @@ function PrefToMask{  #функция для перевода префикса �
     else{return $Prefix}
 }
 
-function IpNetComp{
+function IpNetComp{   #функция для проверки двух Ip адресов. Проверяет находятся ли Ip в одной подсети. Также выводит адреса подсетей.
 
     param([string]$IpA1, [string]$IpA2, [string]$NetMask)
     if(!$IpA1){[string]$IpA1= (Read-Host -Prompt "Enter Ip1 (e.g 192.168.1.1)")}#вводим если не перадано аргументом
@@ -84,7 +84,7 @@ function IpNetComp{
 
     if($Net1 -eq $Net2)#сравниваем две строки Ip адресов
         {
-            Write-Output "Ip1 $IpA1 and Ip2 $IpA2 belong to the same subnet $Net1"
+            Write-Output "Ip1 $IpA1 and Ip2 $IpA2 belong to the same subnet $Net1" 
         }
     else
         {
